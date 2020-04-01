@@ -62,22 +62,34 @@ main {
   color: red;
 }
 .radioXY {
+  width: 75px;
 }
 
 .inputValue {
   display: block;
+  width: 170px;
 }
+
 .inputValue > span, .inputValie > em, .inputValue > input {
   display: block;
+  text-align: center;
+}
+.inputValue > span {
+  height: 40px;
 }
 
 .inputBox {
-  width: 150px;
+  width: 100%;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
-.inputValie > em {
+.warningMaxText, .warningMacthText {
   color: brown;
 }
-.inputCaption {
+.inputCaption > span {
+  display: block;
+  height: 40px;
+  text-align: center;
 }
 .caption {
   display: block;

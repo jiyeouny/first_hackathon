@@ -79,6 +79,10 @@ $matrix.onclick = e => {
   $test.innerHTML = `X축 좌표 : ${position[0]}<br>Y축 좌표 : ${position[1]}`;
 
   e.target.classList.add('choice');
+
+  dataSheet.forEach(v => {
+    if (v.position === `${position[0]}${position[1]}`) console.log(v.value);
+  });
 };
 
 
@@ -130,8 +134,7 @@ $submit.onclick = () => {
   const arrText = [...$inputBox.value];
 
   const objData = {
-    X: `${position[0]}`,
-    Y: `${position[1]}`,
+    position: `${position[0]}${position[1]}`,
     direction: dir,
     value: $inputBox.value,
     caption: $caption.value
@@ -152,5 +155,6 @@ $submit.onclick = () => {
   $inputBox.value = '';
   $caption.value = '';
 };
+
 
 console.dir($dirX);
