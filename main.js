@@ -9,12 +9,13 @@ const $submit = document.querySelector('.submit');
 const $init = document.querySelector('.init');
 const $dirX = document.getElementById('dirX');
 const $caption = document.querySelector('.caption');
-const $warning = document.querySelector('.warning');
+const $warningMaxText = document.querySelector('.warningMaxText');
+const $warningMacthText = document.querySelector('.warningMacthText');
 
 
 // 초기 Data
 let position = ['0', '0']; // 초기 좌표
-const dataSheet = []; // 초기 Data
+let dataSheet = []; // 초기 Data
 let overtext = true; // Text 입력 글자 수 제한
 let matchtext = true; // Text 입력 매칭
 
@@ -46,6 +47,7 @@ function rendering() {
 // 자료구조 초기화 함수
 function initialize() {
   crateMatrix = crateMatrix.map(yv => yv.map(() => ''));
+  dataSheet = [];
 }
 
 
@@ -56,15 +58,27 @@ $init.onclick = () => {
   rendering();
 };
 
+// 포커스 삭제 함수
+function focusOut() {
+  crateMatrix.forEach((yv, yi) => {
+    yv.forEach((xv, xi) => {
+      const temp = document.querySelector(`.matrix > .y${yi} > .x${xi}`);
+      temp.classList.remove('choice');
+    });
+  });
+}
+
 
 // 좌표 취득 logic
 $matrix.onclick = e => {
   if (!e.target.matches('.contentBox')) return;
+  focusOut();
 
   const temp = `${e.target.className}, ${e.target.parentElement.className}`;
   position = temp.match(/[0-9]/g);
-  console.log(position);
-  $test.innerHTML = `X축 좌표 : ${position[0]}, Y축 좌표 : ${position[1]}`;
+  $test.innerHTML = `X축 좌표 : ${position[0]}<br>Y축 좌표 : ${position[1]}`;
+
+  e.target.classList.add('choice');
 };
 
 
@@ -72,11 +86,12 @@ $matrix.onclick = e => {
 $inputBox.onblur = () => {
   if ($dirX.checked) {
     overtext = $inputBox.value.length <= crateMatrix[0].length - position[0] || false;
-    $warning.textContent = overtext ? '' : `글자수를 초과하였습니다. ${crateMatrix[0].length - position[0]}자 이내로 작성해 주세요`;
+    $warningMaxText.textContent = overtext ? '' : `글자수를 초과하였습니다. ${crateMatrix[0].length - position[0]}자 이내로 작성해 주세요`;
   } else {
     overtext = $inputBox.value.length <= crateMatrix.length - position[1] || false;
-    $warning.textContent = overtext ? '' : `글자수를 초과하였습니다. ${crateMatrix.length - position[1]}자 이내로 작성해 주세요`;
+    $warningMaxText.textContent = overtext ? '' : `글자수를 초과하였습니다. ${crateMatrix.length - position[1]}자 이내로 작성해 주세요`;
   }
+  if (!overtext) return;
 
   const arrText = [...$inputBox.value];
   const tempMatrix = Array.from({ length: 10 }, () => Array.from({ length: 10 }, () => ''));
@@ -103,7 +118,7 @@ $inputBox.onblur = () => {
     });
   });
   matchtext = warningCount === 0 || false;
-  $warning.textContent = warningText;
+  $warningMacthText.textContent = warningText;
 };
 
 
@@ -134,6 +149,8 @@ $submit.onclick = () => {
 
   rendering();
   console.log(dataSheet);
+  $inputBox.value = '';
+  $caption.value = '';
 };
 
 console.dir($dirX);
