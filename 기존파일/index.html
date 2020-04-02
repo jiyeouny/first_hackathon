@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href=".//main.css">
+  <title>Document</title>
+</head>
+<body>
+
+  <main>
+    <h1 class="heading">가로 세로 낱말 퀴즈</h1>
+    <div class="matrix"></div>
+  
+    <div class="mainButton"></div>
+  
+    <div class="crate">
+      <h2 class="heading2nd">문제 출제하기</h2>
+      <div class="flexBox">
+        <div class="test">X축 좌표 : 0<br>Y축 좌표 : 0</div>
+    
+        <div class="radioXY">
+          <div>
+            <input type="radio" id="dirX" name="direction" value="gotoX" checked>
+            <label for="dirX">가로방향</label>
+          </div>
+          <div>
+            <input type="radio" id="dirY" name="direction" value="gotoY">
+            <label for="dirY">세로방향</label>
+          </div>
+        </div>
+      
+        <div class="inputValue">
+          <span>Matrix 안에<br>들어갈 값을 입력하세요</span>
+          <input type="text" class="inputBox">
+          <em class="warningEmptyInputText"></em>
+          <em class="warningMaxText"></em>
+          <em class="warningMacthText"></em>
+        </div>
+      
+        <div class="inputCaption">
+          <span>입력한 문제의<br>설명을 입력하세요</span>
+          <input type="text" class="caption">
+          <em class="warningEmptyCaptionText"></em>
+        </div>
+    
+        <div class="inputButton">
+          <button type="submit" class="submit">submit</button>
+          <button class="init">초기화</button>
+          <button class="problemBtn">문제 풀기</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="problem hidden">
+      <h2 class="heading2nd">문제 풀기기</h2>
+      <div class="flexBox">
+    
+        <div class="problemButton">
+          <button class="crateBtn">문제 출제</button>
+        </div>
+      </div>
+    </div>
+
+    
+
+  </main>
+
+  <script src="./main.js"></script>
+</body>
+</html>

@@ -2,7 +2,6 @@ body {
   background-image: linear-gradient(180deg, #4a54e0, #434099);
   min-height: 100vh;
 }
-
 main {
   width: 750px;
   height: 100%;
@@ -12,15 +11,23 @@ main {
   border-radius: 5px;
   background-color: white;
 }
-
-.main-heading {
+.heading {
   text-align: center;
   padding-top: 30px;
 }
-
-.sub-heading {
+.heading2nd {
   text-align: center;
   font-size: 15px;
+}
+.flexBox {
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 30px;
+  display: flex;
+  justify-content: space-around;
+  font-size: 14px;
+
 }
 
 .matrix {
@@ -30,11 +37,9 @@ main {
   margin-bottom: 30px;
   border: 10px solid gainsboro;
 }
-
 .matrix > div {
   display: flex;
 }
-
 .contentBox {
   width: 50px;
   height: 50px;
@@ -45,66 +50,57 @@ main {
   margin-top: -1px;
   margin-left: -1px;
 }
+.choice {
+  background-color: burlywood;
+}
+
+.crate {
+  border-top: 2px solid gainsboro;
+}
 
 .hidden {
   display: none;
 }
 
-.choice {
-  background-color: burlywood;
+.inputValie > em {
+  color: red;
+}
+.radioXY {
+  width: 75px;
 }
 
-/* ----------------------------------------- */
-
-.crate-exam {
-  border-top: 2px solid gainsboro;
-}
-
-.exam-container {
-  width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-bottom: 30px;
-  display: flex;
-  justify-content: space-around;
-  font-size: 14px;
-}
-
-.crate-value {
+.inputValue {
   display: block;
   width: 170px;
 }
 
-.crate-value > em {
-  color: red;
-}
-
-.crate-input > span, .crate-input > em, .crate-input > input {
+.inputValue > span, .inputValie > em, .inputValue > input {
   display: block;
   text-align: center;
 }
-.crate-input > span {
+.inputValue > span {
   height: 40px;
 }
-.crate-value {
+
+.inputBox {
   width: 100%;
   padding-top: 5px;
   padding-bottom: 5px;
 }
-.crate-input > em {
+.warningMaxText, .warningMacthText {
   color: brown;
 }
-.crate-caption > span {
+.inputCaption > span {
   display: block;
   height: 40px;
   text-align: center;
 }
-.crate-caption-value {
+.caption {
   display: block;
   width: 150px;
   height: 50px;
 }
-.btn-crate > button, .btn-solve > button {
+.inputButton > button, .problemButton > button {
   width: 100px;
   font-size: 14px;
   padding-top: 5px;
@@ -115,4 +111,5 @@ main {
   background-color: #434099;
   color: white;
   margin-bottom: 10px;  
+
 }

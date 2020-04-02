@@ -10,17 +10,21 @@
 <body>
 
   <main>
-    <h1 class="heading">가로 세로 낱말 퀴즈</h1>
+    <h1 class="main-heading">가로 세로 낱말 퍼즐</h1>
+
+    <!-- 매트릭스 -->
     <div class="matrix"></div>
-  
-    <div class="mainButton"></div>
-  
-    <div class="crate">
-      <h2 class="heading2nd">문제 출제하기</h2>
-      <div class="flexBox">
-        <div class="test">X축 좌표 : 0<br>Y축 좌표 : 0</div>
-    
-        <div class="radioXY">
+
+    <!-- 문제 출제 -->
+    <div class="crate-exam">
+      <h2 class="sub-heading">문제 출제하기</h2>
+      <div class="exam-container">
+
+        <!-- 좌표 표시 -->
+        <div class="point-of-the-compass">X축 좌표 : 0<br>Y축 좌표 : 0</div>
+
+        <!-- radio button -->
+        <div class="choice-direction">
           <div>
             <input type="radio" id="dirX" name="direction" value="gotoX" checked>
             <label for="dirX">가로방향</label>
@@ -31,34 +35,38 @@
           </div>
         </div>
       
-        <div class="inputValue">
+        <!-- 정답 입력 (출제) -->
+        <div class="crate-input">
           <span>Matrix 안에<br>들어갈 값을 입력하세요</span>
-          <input type="text" class="inputBox">
-          <em class="warningEmptyInputText"></em>
-          <em class="warningMaxText"></em>
-          <em class="warningMacthText"></em>
+          <input type="text" class="crate-value">
+          <em class="warning-empty-input-text"></em>
+          <em class="warning-max-input-text"></em>
+          <em class="warning-macth-input-text"></em>
         </div>
       
-        <div class="inputCaption">
+        <!-- 문제 설명 입력 -->
+        <div class="crate-caption">
           <span>입력한 문제의<br>설명을 입력하세요</span>
-          <input type="text" class="caption">
-          <em class="warningEmptyCaptionText"></em>
+          <input type="text" class="crate-caption-value">
+          <em class="warning-empty-caption-text"></em>
         </div>
     
-        <div class="inputButton">
-          <button type="submit" class="submit">submit</button>
-          <button class="init">초기화</button>
-          <button class="problemBtn">문제 풀기</button>
+        <!-- 출제 버튼 모음 -->
+        <div class="btn-crate">
+          <button type="submit" class="btn-crate-submit">출제</button>
+          <button class="btn-crate-init">초기화</button>
+          <button class="btn-solve-exam">문제 풀기</button>
         </div>
       </div>
     </div>
 
-    <div class="problem hidden">
-      <h2 class="heading2nd">문제 풀기기</h2>
-      <div class="flexBox">
+    <!-- 문제 풀이 -->
+    <div class="solve-exam hidden">
+      <h2 class="sub-heading">문제 풀기기</h2>
+      <div class="exam-container">
     
-        <div class="problemButton">
-          <button class="crateBtn">문제 출제</button>
+        <div class="btn-solve">
+          <button class="btn-crate-exam">문제 출제</button>
         </div>
       </div>
     </div>
