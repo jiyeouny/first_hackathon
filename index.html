@@ -34,6 +34,7 @@
         <div class="inputValue">
           <span>Matrix 안에<br>들어갈 값을 입력하세요</span>
           <input type="text" class="inputBox">
+          <em class="warningEmptyInputText"></em>
           <em class="warningMaxText"></em>
           <em class="warningMacthText"></em>
         </div>
@@ -41,15 +42,28 @@
         <div class="inputCaption">
           <span>입력한 문제의<br>설명을 입력하세요</span>
           <input type="text" class="caption">
+          <em class="warningEmptyCaptionText"></em>
         </div>
     
         <div class="inputButton">
           <button type="submit" class="submit">submit</button>
           <button class="init">초기화</button>
-          <button class="problem">문제 풀기</button>
+          <button class="problemBtn">문제 풀기</button>
         </div>
       </div>
     </div>
+
+    <div class="problem hidden">
+      <h2 class="heading2nd">문제 풀기기</h2>
+      <div class="flexBox">
+    
+        <div class="problemButton">
+          <button class="crateBtn">문제 출제</button>
+        </div>
+      </div>
+    </div>
+
+    
 
   </main>
 

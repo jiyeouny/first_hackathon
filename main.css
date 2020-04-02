@@ -58,6 +58,10 @@ main {
   border-top: 2px solid gainsboro;
 }
 
+.hidden {
+  display: none;
+}
+
 .inputValie > em {
   color: red;
 }
@@ -96,7 +100,7 @@ main {
   width: 150px;
   height: 50px;
 }
-.inputButton > button {
+.inputButton > button, .problemButton > button {
   width: 100px;
   font-size: 14px;
   padding-top: 5px;
